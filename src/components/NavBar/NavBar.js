@@ -2,7 +2,9 @@ import './navStyle.scss'
 import React from 'react';
 import { Navbar,Nav,NavDropdown,Form,FormControl,Button} from 'react-bootstrap';
 import logo from './logo.jpg' 
-import Icons from './CartIcon/CartIcon'
+import Icons from '../CartIcon/CartIcon' 
+
+
 
 
 const NavBar = ()=>{
@@ -33,7 +35,7 @@ const NavBar = ()=>{
     <Nav>
     </Nav>
     <Form inline>
-    < Icons /> 
+< Icons />   
       <FormControl type="text" placeholder="Search your products!!" className="mr-sm-2" />
       <Button variant="outline-success">Search</Button>
     
