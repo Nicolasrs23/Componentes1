@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 //PARA QUE ES EL ON ADD?????
 
 const ItemCounter = ({initialValue, maxValue, minValue }) =>{
-const [counter, setCounter] = useState(initialValue);
+const [counter, setCounter] = useState(initialValue); 
 
 
 
@@ -56,35 +56,39 @@ export default ItemCounter;
 //BUSCAR ATAJOS DE REACT POR EJEMPLO NFN
 
 
-const itemCounter = {
+//import React, { useState } from "react";
+/* import "../style.css";
 
-  state = { value: 5 };
+const ItemCounter = props => {
+  const [value, setValue] = useState(props.init ? parseInt(props.init) : 0);
+  return (
+    <div className="count">
+      <button
+        className="count__btn count__btn--dec"
+        onClick={() => {
+          if (value - 1 >= parseInt(props.min)) setValue(value - 1);
+        }}
+      >
+        -
+      </button>
+      <input type="number" className="count__input" disabled value={value} />
+      <button
+        className="count__btn count__btn--add"
+        onClick={() => {
+          if (value + 1 <= props.max) {
+            setValue(value + 1);
+            props.onAdd();
+          }
+        }}
+      >
+        +
+      </button>
+    </div>
+  );
+};
 
- const = increment = () => {
-    this.setState(prevState => ({
-      value: prevState.value + 1
-    }));
-  };
-
-  const = decrement = () => {
-    this.setState(prevState => ({
-      value: prevState.value - 1
-    }));
-  };
-
-  render() {
-    return (
-      <div>
-        {this.state.value}
-        <button onClick={this.increment}>+</button>
-        <button onClick={this.decrement}>-</button>
-      </div>
-    )
-  }
-} */
+export default ItemCounter; */
 
 
-
-
-
-/* export default hooks; */
+//ESTO VA EN APP
+{/* <ItemCounter init="0" min="0" max="20" onAdd={() => console.log("onAdd")} /> */}
