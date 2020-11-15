@@ -55,7 +55,6 @@ export default ItemCounter;
 
 //BUSCAR ATAJOS DE REACT POR EJEMPLO NFN
 
-/* 
 
 const itemCounter = {
 
@@ -87,10 +86,5 @@ const itemCounter = {
 
 
 
-/* decrement = () => {
-    this.setState(prevState => ({
-        value: Math.max(prevState.value - 1, 0)
-      }));
-    }; */
 
 /* export default hooks; */
