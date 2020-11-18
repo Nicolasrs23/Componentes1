@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <NavBar/>
       <Home greattings="Bienvenido a mi E-commerce" />
-   <ItemCounter maxValue={8} minValue={0} initialValue={0}/>
+{/*    <ItemCounter maxValue={8} minValue={0} initialValue={0}/> */}
    
     </div>
    

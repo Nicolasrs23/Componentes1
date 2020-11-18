@@ -4,7 +4,7 @@ import React, {
 } from 'react';
 import '../Item/Itemlist.scss'
 
-
+/* 
 const Items = () => {
     const [products, setProducts] = useState();
     // Cuando incializamos el componente, pedimos datos a la base de datos simulada
@@ -71,4 +71,19 @@ const Items = () => {
         </div>
          </>
 }
-export default Items;
+export default Items; */
+import Item from '../Item/Item'
+const Itemlist =({items}) =>{
+
+return(
+    <div id='ItemList'>
+        {items.map((item,idx) => {
+            return <Item item={item}/>
+        })}
+
+    </div>
+)
+
+}
+
+export default Itemlist
