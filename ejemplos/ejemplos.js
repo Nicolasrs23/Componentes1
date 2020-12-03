@@ -234,3 +234,33 @@ const Items = () => {
   </>
 }
 export default Items;
+
+
+//database.js EJEMPLO FILTER
+const products = [
+  { id: 1, name: 'a' },
+  { id: 2, name: 'b' },
+  { id: 3, name: 'c' },
+]
+const getProducts = () => {
+  return new Promise((resolve) => {
+    resolve(products)
+  })
+}
+const getProductById = (id) => {
+  return new Promise((resolve) => {
+    resolve(products.find((product) => product.id == id))
+  })
+}
+  //Home devuelven todos los productos
+  useEffect(() => {
+    getProducts().then((response) => {
+      console.table(response) // aplican el setState que tengan 
+    })
+  }, [])
+  //ItemDetailContainer retornan el objeto (cambian el 2 por el id del useParams)
+  useEffect(() => {
+    getProductById(2).then((response) => {
+      console.table(response) // aplican el setState que tengan
+    })
+  }, [])

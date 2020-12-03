@@ -16,9 +16,9 @@ return(
        <h3>
        {product.details}
        </h3>
-       <ItemCounter maxValue={8} minValue={0} initialValue={0}/>
+       <ItemCounter maxValue={8} minValue={0} initialValue={0} onAdd={0}/>
     
-      {/*   {items.map((item,idx) => {
+{/*         {items.map((item,idx) => {
             return <Item item={item}/>
         })} */}
 
