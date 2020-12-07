@@ -8,6 +8,7 @@ const ItemCounter = ({ initialValue, maxValue, minValue, onAdd }) => {
       return alert("No puede pedir cantidades negativas");
     }
     setCounter(counter - 1);
+    onAdd(counter - 1);
 
     console.log(decrement);
   };
@@ -18,6 +19,7 @@ const ItemCounter = ({ initialValue, maxValue, minValue, onAdd }) => {
     }
 
     setCounter(counter + 1);
+    onAdd(counter + 1);
   };
 
   return (
@@ -25,7 +27,7 @@ const ItemCounter = ({ initialValue, maxValue, minValue, onAdd }) => {
       <h1>{counter}</h1>
       <button onClick={decrement}>Decrement</button>
       <button onClick={increment}>increment</button>
-      <button>Comprar {counter} </button>
+     {/*  <button>Comprar {counter} </button> */}
     </div>
   );
 };

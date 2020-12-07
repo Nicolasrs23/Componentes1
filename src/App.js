@@ -11,6 +11,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import  AppContext  from './components/UseContext/UseAppContext';
 import {AppProvider} from './components/UseContext/UseAppContext'
 import  Carrousel  from '../src/components/Carrousel/Carrousel';
+import Cart from '../src/components/Cart/Cart'
 
 import {useEffect, useState} from 'react'
 import {getFirestore} from '../src/FireBase/index'
@@ -22,7 +23,7 @@ function App() {
     const itemCollection = db.collection("producto")
    
     itemCollection.get().then((response) =>{
-        console.log(response)
+      /*   console.log(response) */
         const aux = response.docs.map(element =>{
           return element.data();
         });
@@ -51,6 +52,7 @@ function App() {
       <AppProvider>
         <BrowserRouter>
           <NavBar />
+         
           {/*  <Carrousel/> */}
 
           <Switch>
@@ -62,9 +64,21 @@ function App() {
             <Route
               exact
               path="/detail/:id"
-              component={ItemDetailContainer}
+              component={ItemDetailContainer }
+             
+          /*     exact
+              path="/cart/:id" */
+             /*  component={Cart} */
             ></Route>
+                     <Route
+           /*            exact
+              path="/Cart" 
+               component={Cart}  */
+          
+            ></Route>
+         
           </Switch>
+     
         </BrowserRouter>
       </AppProvider>
 

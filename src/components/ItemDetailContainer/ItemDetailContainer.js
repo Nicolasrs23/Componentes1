@@ -5,27 +5,42 @@ import ItemDetail from '../ItemDetail/ItemDetail';
 
 const ItemDetailContainer = () =>{
 const [product, setProduct] = useState({}) 
+const [loading, setLoading] = useState(true);
 
+const { id } = useParams();
 
 
     useEffect(() => {
-        
+        setLoading(true)
         getProduct()
+        setTimeout(() => {
+            getProduct()
         .then( 
-          (response) =>{
-             setProduct(response)
-         }
-         )
-      }, [])
+          (response) => {
+            response.forEach(element => {
+                if(Number(id) === element.id) {
+                  setProduct(element);
+                }
+              });
+              setLoading(false)
+           
+         })
+         .finally(() => {})
+        }, 3000)
+         
+      }, [id])
     return(
         <div id='ItemDetailContainer'>
-            <h2>
+            {loading ? <h2> Loading </h2> : <ItemDetail product={product}/>}
+            </div>
+    )}
+         /*    <h2>
                 <ItemDetail product={product}/>
             </h2>
-        </div>
+        </div> */
     
         
         
-    )
-}
+    
+
 export default ItemDetailContainer;

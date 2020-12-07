@@ -1,28 +1,16 @@
-/* 
-const Item =({item}) =>{
 
-  return(
-      <div id='Item'>
-         <h2>{item.productName}</h2> 
-      </div>
-  )
-  
-  }
-  
-  export default Item */
 
 
   import { CardDeck, Card, /* Button, */ } from 'react-bootstrap';
-  import logo from '../Cards/index.jpg'
+/*   import logo from '../Cards/index.jpg' */
   import Button from '../Button/Button'
 import { Link } from "react-router-dom";
 import './Item.scss'
-import {useContext} from 'react'
-import AppContext from '../UseContext/UseAppContext'
+import useAppContext from '../UseContext/UseAppContext'
 
 const Item = ({ item }) => {
 
-  const ctx = useContext(AppContext)
+/*   const ctx = useAppContext() */
   return (
     <div id="Item" className="item-container">
    <CardDeck>
@@ -31,12 +19,19 @@ const Item = ({ item }) => {
     <Card.Body>
       <Card.Title>{item.productName}</Card.Title>
       <Card.Text>
-    Combo consta de : Shampoo, Acondicionador y Mascara {ctx.dummyText} {/* //EJEMPLO JOSE// */}
+      {item.price}
+   {/*  Combo consta de : Shampoo, Acondicionador y Mascara */}  {/* //EJEMPLO JOSE// */}
       </Card.Text>
     </Card.Body>
    {/*  <Button variant="primary">Go somewhere</Button>  */}{/* ///ACA PONER LINK PARA EL DETALLE */}
-  
-  <Button/>
+ {/*   //REVEER FUNCIONAMIENTO */}
+  <button>
+  <Link to={"/detail/" + item.id} activeClassName="me-activo">
+                {/* {" "} */}
+                Comprar{/* {" "} */}
+              </Link>
+  </button>
+ {/*  <Button/> */}
   </Card>
   </CardDeck>
     </div>
