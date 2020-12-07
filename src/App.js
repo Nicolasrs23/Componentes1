@@ -71,9 +71,9 @@ function App() {
              /*  component={Cart} */
             ></Route>
                      <Route
-           /*            exact
+                      exact
               path="/Cart" 
-               component={Cart}  */
+               component={Cart} 
           
             ></Route>
          

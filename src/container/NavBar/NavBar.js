@@ -10,6 +10,7 @@ import {
 } from "react-bootstrap";
 import logo from "./logo.jpg";
 import Icons from "../../components/CartIcon/CartIcon";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
@@ -21,8 +22,9 @@ const NavBar = () => {
         className="d-inline-block align-top"
         alt="React Bootstrap logo"
       />
-
-      <Navbar.Brand href="#home">E-commerce</Navbar.Brand>
+      <Link to='/'>
+      <Navbar.Brand>E-commerce</Navbar.Brand>
+      </Link>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto flex1">
