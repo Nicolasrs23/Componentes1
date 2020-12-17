@@ -1,88 +1,38 @@
-
-import './App.css';
-import NavBar from './container/NavBar/NavBar'
-import Home from './container/Home/Home'
-import ItemCounter from './components/Counter/ItemCount'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import {BrowserRouter, Switch, Route} from 'react-router-dom'
-import Cards from '../src/components/Cards/CardDeck'
-import ItemDetail from './components/ItemDetail/ItemDetail';
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import  AppContext  from './components/UseContext/UseAppContext';
-import {AppProvider} from './components/UseContext/UseAppContext'
-import  Carrousel  from '../src/components/Carrousel/Carrousel';
-import Cart from '../src/components/Cart/Cart'
-
-import {useEffect, useState} from 'react'
-import {getFirestore} from '../src/FireBase/index'
+import "./App.css";
+import NavBar from "./container/NavBar/NavBar";
+import Home from "./container/Home/Home";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+import { AppProvider } from "./components/UseContext/UseAppContext";
+import Cart from "../src/components/Cart/Cart";
+import { CartProvider } from "../src/components/UseContext/CartContext";
 
 function App() {
-  
-  useEffect(() => {
-    const db = getFirestore();
-    const itemCollection = db.collection("producto")
-   
-    itemCollection.get().then((response) =>{
-      /*   console.log(response) */
-        const aux = response.docs.map(element =>{
-          return element.data();
-        });
-      /*   setProducto(aux); */
-        
-    });
-    
-}, ([]));
-
   return (
-
-
-
-
-
     <div className="App">
-      
-      
-{/*       <div>
-  {producto ? producto.map(element =>{
-
-  })}
-</div> */}
-      
-      
       <AppProvider>
-        <BrowserRouter>
-          <NavBar />
-         
-          {/*  <Carrousel/> */}
+        <CartProvider>
+          <BrowserRouter>
+            <NavBar />
 
-          <Switch>
-            <Route exact path="/">
-              <Home greattings="Bienvenido a mi E-commerce" />
-              {/*           <Cards/> */}
-            </Route>
+            {/*  <Carrousel/> */}
 
-            <Route
-              exact
-              path="/detail/:id"
-              component={ItemDetailContainer }
-             
-          /*     exact
-              path="/cart/:id" */
-             /*  component={Cart} */
-            ></Route>
-                     <Route
-                      exact
-              path="/Cart" 
-               component={Cart} 
-          
-            ></Route>
-         
-          </Switch>
-     
-        </BrowserRouter>
+            <Switch>
+              <Route exact path="/">
+                <Home greattings="Bienvenido a mi E-commerce" />
+              </Route>
+
+              <Route
+                exact
+                path="/detail/:id"
+                component={ItemDetailContainer}
+              ></Route>
+              <Route exact path="/Cart" component={Cart}></Route>
+            </Switch>
+          </BrowserRouter>
+        </CartProvider>
       </AppProvider>
-
-      {/*  <ItemCounter maxValue={8} minValue={0} initialValue={0}/> */}
     </div>
   );
 }

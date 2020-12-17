@@ -1,4 +1,44 @@
+import { getFirestore } from "../../FireBase/index";
+
 export const getProducts = () => {
+  return new Promise((resolve, reject) => {
+    const query = getFirestore().collection("Producto");
+    query.get().then((response) => {
+      if (response.size === 0) reject("empty");
+
+      const data = response.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+      /*  console.log(data) */
+      resolve(data);
+    });
+  });
+};
+
+export const getProduct = (id) => {
+  return new Promise((resolve, reject) => {
+    const query = getFirestore().collection("Producto").doc(id);
+    query.get().then((response) => {
+      if (response.size === 0) reject("empty");
+
+      const data = { ...response.data(), id: response.id };
+      console.log(data);
+      resolve(data);
+    });
+  });
+};
+
+//FORMA DE USAR EL ID DE FIREBASE
+/* .then((querySnapshot) => {
+    if (querySnapshot.size === 0) {
+      console.log("No results!");
+    }
+    setItems(
+      querySnapshot.docs.map((doc) => {
+        return { id: doc.id, ...doc.data() };
+      })
+    );
+  }) */
+
+/* export const getProducts = () => {
     return new Promise((resolve, reject) => {
         resolve(
             [
@@ -22,10 +62,10 @@ export const getProducts = () => {
             }
         ])
     })
-}
+} */
 
 //ARREGLAR CON EL AFTER CLASS DE CONTEXT !!!!
-export const getProduct = () => {
+/* export const getProduct = () => {
     return new Promise((resolve, reject) => {
         resolve(
             [
@@ -55,4 +95,4 @@ export const getProduct = () => {
         )
     })
 }
-
+ */

@@ -1,17 +1,23 @@
-import React from "react";
-import useAppContext from "../UseContext/UseAppContext";
+import { React, useContext } from "react";
+import { CartContext } from "../UseContext/CartContext";
 import { Link } from "react-router-dom";
-const Cart = () => {
-  const { products } = useAppContext();
-  console.log(products);
+import "./Cart.scss";
 
+const Cart = () => {
+  const [cart, setCart] = useContext(CartContext);
+
+  console.log(cart);
   return (
-    <div id="Cart">
-      {products.length === 0 ? (
+    <div id="Cart" className="FormatCart">
+      {cart.length === 0 ? (
         <Link to="/">Todavia no compraste, que esperas!!</Link>
       ) : (
-        products.map((product) => (
-          <h1> {`${product.productName} cantidad: ${product.quantity}`} </h1>
+        cart.map((cart) => (
+          <h1>
+            {" "}
+            {`${cart.item.productName} cantidad: ${cart.quantity}`}
+            <img src={cart.item.img}></img>
+          </h1>
         ))
       )}
     </div>

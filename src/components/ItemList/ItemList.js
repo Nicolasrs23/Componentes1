@@ -1,22 +1,15 @@
-import React, {
-    useState,
-    useEffect
-} from 'react';
-import '../ItemList/Itemlist.scss'
+import "../ItemList/Itemlist.scss";
 
-
-import Item from '../Item/Item'
-const Itemlist =({items}) =>{
-
-return(
-    <div id='ItemList'>
-        {items.map((item,idx) => {
-            return <Item key={idx} item={item}/>
-        })}
-
+import Item from "../Item/Item";
+const Itemlist = ({ items }) => {
+  console.log(items);
+  return (
+    <div id="ItemList" className="productContainer">
+      {items.map((item, idx) => {
+        return <Item key={idx} item={item} />;
+      })}
     </div>
-)
+  );
+};
 
-}
-
-export default Itemlist
+export default Itemlist;

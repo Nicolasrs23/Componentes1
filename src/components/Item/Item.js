@@ -1,21 +1,19 @@
 import { CardDeck, Card } from "react-bootstrap";
-import Button from "../Button/Button";
 import { Link } from "react-router-dom";
 import "./Item.scss";
-import useAppContext from "../UseContext/UseAppContext";
 
 const Item = ({ item }) => {
   return (
     <div id="Item" className="item-container">
       <CardDeck>
         <Card className="imagen">
-          <img variant="top" src={item.img} />
+          <img variant="top" src={item.img} alt="product img" />
           <Card.Body>
             <Card.Title>{item.productName}</Card.Title>
             <Card.Text>{item.price}</Card.Text>
           </Card.Body>
           <button>
-            <Link to={"/detail/" + item.id} activeClassName="me-activo">
+            <Link to={"/detail/" + item.id} activeclassname="me-activo">
               Comprar
             </Link>
           </button>
