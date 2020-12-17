@@ -1,6 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 
+
 const app = firebase.initializeApp(
     {
   apiKey: "AIzaSyBZCBUuppZBQhdK_ZdViQWd-anOS2QUQCI",
@@ -19,15 +20,3 @@ const app = firebase.initializeApp(
     export const getFirestore = () => {
         return firebase.firestore();
     }
-/* 
-
-    useEffect(() => {
-        const db = getFirestore();
-        const itemCollection = db.collection("producto")
-       
-        itemCollection.get().then((response) =>{
-            console.log(response)
-        }
-        )
-        
-    }, []) */

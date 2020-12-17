@@ -11,20 +11,12 @@ const ItemDetailContainer = () => {
 
   useEffect(() => {
     setLoading(true);
-    getProduct();
-    setTimeout(() => {
-      getProduct()
-        .then((response) => {
-          response.forEach((element) => {
-            if (Number(id) === element.id) {
-              setProduct(element);
-            }
-          });
-          setLoading(false);
-        })
-        .finally(() => {});
-    }, 3000);
+    getProduct(id).then((element) => {
+      setProduct({ ...element, id });
+      setLoading(false);
+    });
   }, [id]);
+
   return (
     <div id="ItemDetailContainer">
       {loading ? <h2> Loading </h2> : <ItemDetail product={product} />}
