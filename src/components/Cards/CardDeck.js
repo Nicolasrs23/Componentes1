@@ -6,7 +6,7 @@ const Cards = () => {
   return (
     <CardDeck>
       <Card>
-        <img variant="top" src={logo} />
+        <img variant="top" src={logo} alt="Logo" />
         <Card.Body>
           <Card.Title>Combo Loreal</Card.Title>
           <Card.Text>

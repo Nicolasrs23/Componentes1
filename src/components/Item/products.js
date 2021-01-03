@@ -26,6 +26,29 @@ export const getProduct = (id) => {
   });
 };
 
+/* 
+export const getCategories = () => {
+
+
+  return new Promise((resolve, reject) => {
+      const categories = getFirestore().collection("category");
+
+
+      categories.get().then((response) => {
+          if (response.size === 0) {
+              reject("No hay registros");
+          }
+          const data = response.docs.map((doc) => ({
+              ...doc.data(),
+              id: doc.id,
+          }));
+
+
+          resolve(data);
+      });
+  });
+
+} */
 //FORMA DE USAR EL ID DE FIREBASE
 /* .then((querySnapshot) => {
     if (querySnapshot.size === 0) {

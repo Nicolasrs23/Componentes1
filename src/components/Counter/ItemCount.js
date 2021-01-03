@@ -5,7 +5,7 @@ const ItemCounter = ({ initialValue, maxValue, minValue, onAdd }) => {
 
   const decrement = () => {
     if (counter === minValue) {
-      return alert("No puede pedir cantidades negativas");
+      return alert("No puede pedir cantidades en cero o negativas");
     }
     setCounter(counter - 1);
     onAdd(counter - 1);

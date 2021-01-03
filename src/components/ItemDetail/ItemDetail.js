@@ -1,4 +1,4 @@
-import useAppContext from "../UseContext/UseAppContext";
+
 import "./ItemDetail.scss";
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
@@ -17,9 +17,11 @@ const ItemDetail = ({ product }) => {
   const addProductToCart = () => {
     const productInCart = cart.find((p) => p.item.id === product.id);
 
-    if (productInCart) {
+ 
+    if (productInCart) { 
       productInCart.quantity += quantity;
       setCart([...cart]);
+    
     } else {
       setCart([...cart, { ...cart, quantity, item: product }]);
     }
@@ -33,8 +35,8 @@ const ItemDetail = ({ product }) => {
       <h3>{product.details}</h3>
       <ItemCounter
         maxValue={8}
-        minValue={0}
-        initialValue={0}
+        minValue={1}
+        initialValue={1}
         onAdd={handleCounter}
       />
       <button onClick={addProductToCart}>

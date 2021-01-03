@@ -1,6 +1,6 @@
 import "../ItemList/Itemlist.scss";
-
 import Item from "../Item/Item";
+
 const Itemlist = ({ items }) => {
   console.log(items);
   return (
