@@ -12,6 +12,10 @@ import logo from "./logo.jpg";
 import Icons from "../../components/CartIcon/CartIcon";
 import { Link } from "react-router-dom";
 
+
+
+
+
 const NavBar = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -23,24 +27,29 @@ const NavBar = () => {
         alt="React Bootstrap logo"
       />
       <Link to="/">
-        <Navbar.Brand>E-commerce</Navbar.Brand>
+        <Navbar.Brand>Red Queen</Navbar.Brand>
       </Link>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto flex1">
-          <Nav.Link href="#features">Sing Up</Nav.Link>
-          <Nav.Link href="#pricing">Contact Us</Nav.Link>
+      
           <NavDropdown title="Products" id="collasible-nav-dropdown">
             <div className="flex">
+            
+              
+              
+              
+              
+            <Link to="/category/maquinas">
               <NavDropdown.Item href="#action/3.1">
-                {" "}
-                My Products{" "}
-              </NavDropdown.Item>{" "}
+                Maquinas y Herramientas
+              </NavDropdown.Item>
+              </Link>
             </div>
-            <NavDropdown.Item href="#action/3.2">Favorits</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">
-              Tracking orders
+            <Link to="/category/capilar">
+            <NavDropdown.Item href="#action/3.2">Capilar
             </NavDropdown.Item>
+            </Link>
 
             <NavDropdown.Divider />
           </NavDropdown>

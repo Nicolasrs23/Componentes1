@@ -1,5 +1,5 @@
-import { createContext, useContext, useState, useEffect } from "react";
-import { getFirestore } from "../../FireBase/index";
+import { createContext, useContext, useState} from "react";
+
 
 const AppContext = createContext();
 const useAppContext = () => useContext(AppContext);
@@ -10,7 +10,6 @@ export const AppProvider = ({ children }) => {
   const addProduct = (product, quantity) => {
     const existing = products.find((p) => p.id === product.id);
 
-    //si existe sumar cantidades
 
     if (existing) {
       existing.quantity += quantity;
@@ -18,10 +17,12 @@ export const AppProvider = ({ children }) => {
     } else {
       setProducts([...products, { ...product, quantity }]);
     }
+
+
   };
 
   return (
-    <AppContext.Provider value={{ products, addProduct /* productsCount */ }}>
+    <AppContext.Provider value={{ products, addProduct }}>
       {children}
     </AppContext.Provider>
   );
