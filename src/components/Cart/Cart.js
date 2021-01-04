@@ -5,6 +5,7 @@ import "./Cart.scss";
 import { useEffect, useState } from "react";
 import { Form } from "../Form/Form";
 import { getFirestore } from "../../FireBase/index";
+import {Button} from 'react-bootstrap';
 
 const Cart = () => {
   const [cart, setCart] = useContext(CartContext);
@@ -59,19 +60,18 @@ const Cart = () => {
         <Link to="/">Todavia no compraste, que esperas!!</Link>
       ) : (
         cart.map((cart) => (
-          <h1>
+          <h1 >
             {`
             ${cart.item.productName} 
             cantidad: ${cart.quantity} 
              precio: $ ${cart.item.price}
             `}
-            <img src={cart.item.img}></img>
+            <img src={cart.item.img} alt="product img"></img>
           </h1>
         ))
       )}
       <h3>Total de su orden ${getGrandTotal()}</h3>
-      <button onClick={deleteProduct}>Borrar</button>
-      {/* <Button variant="dark">Comprar</Button> */}
+      <Button onClick={deleteProduct}>Borrar ultima orden</Button>
       <Form addOrder={addOrder} />
     </div>
   );

@@ -19,14 +19,14 @@ function App() {
             <NavBar />
             <Switch>
               <Route exact path="/">
-                <Home greattings="Bienvenido a mi E-commerce" />
+                <Home greattings="Bienvenido a Red Queen" />
               </Route>
               <Route exact path="/category/:id">
                 <CategoryContainer/>
             </Route>
               <Route
                 exact
-                path="/detail/:id"
+                path="/detail/:id/"
                 component={ItemDetailContainer}
               ></Route>
               <Route exact path="/Cart" component={Cart}></Route>
