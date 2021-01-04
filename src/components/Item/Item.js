@@ -1,6 +1,7 @@
 import { CardDeck, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Item.scss";
+import {Button} from 'react-bootstrap';
 
 const Item = ({ item }) => {
   return (
@@ -12,11 +13,11 @@ const Item = ({ item }) => {
             <Card.Title>{item.productName}</Card.Title>
             <Card.Text>{item.price}</Card.Text>
           </Card.Body>
-          <button>
-            <Link to={"/detail/" + item.id} activeclassname="me-activo">
+          <Link to={"/detail/" + item.id} activeclassname="me-activo">
+          <Button variant="primary">
               Comprar
-            </Link>
-          </button>
+          </Button>
+          </Link>
         </Card>
       </CardDeck>
     </div>

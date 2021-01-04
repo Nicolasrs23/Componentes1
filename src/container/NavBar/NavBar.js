@@ -5,8 +5,6 @@ import {
   Nav,
   NavDropdown,
   Form,
-  FormControl,
-  Button,
 } from "react-bootstrap";
 import logo from "./logo.jpg";
 import Icons from "../../components/CartIcon/CartIcon";
@@ -57,12 +55,6 @@ const NavBar = () => {
         <Nav></Nav>
         <Form inline>
           <Icons iconName={"shopping-cart"} />
-          <FormControl
-            type="text"
-            placeholder="Search your products!!"
-            className="mr-sm-2"
-          />
-          <Button variant="outline-success">Search</Button>
         </Form>
       </Navbar.Collapse>
     </Navbar>

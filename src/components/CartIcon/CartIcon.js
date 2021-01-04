@@ -18,8 +18,9 @@ const Icons = ({ iconName, callback }) => {
     <div className="contenedor">
       <Link to="/Cart">
         <div>{getQuantity()}</div>
-      </Link>
+     
       <i className={`fas fa-${iconName}`} onClick={callback} />
+      </Link>
     </div>
   );
 };

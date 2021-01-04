@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import {Button} from 'react-bootstrap';
+import "../Counter/ItemCounter.scss"
 
 const ItemCounter = ({ initialValue, maxValue, minValue, onAdd }) => {
   const [counter, setCounter] = useState(initialValue);
@@ -23,10 +25,10 @@ const ItemCounter = ({ initialValue, maxValue, minValue, onAdd }) => {
   };
 
   return (
-    <div>
+    <div className="Counter">
       <h1>{counter}</h1>
-      <button onClick={decrement}>Decrement</button>
-      <button onClick={increment}>increment</button>
+      <Button onClick={decrement}>-</Button>
+      <Button onClick={increment}>+</Button>
     </div>
   );
 };
